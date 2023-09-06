@@ -1,23 +1,41 @@
-# macos php多版本切换工具
+# macos下的php多版本切换工具
 
-#### 介绍
+## 介绍
 用于在macos中使用brew安装了多个PHP版本时的快速默认php版本切换！
 
-#### 软件架构
-软件架构说明
+## 使用方法：
+
+下载 pvm.sh 文件到本地，然后执行 
+~~~sh
+# 显示当前已经安装的可用PHP版本
+pvm.sh -l
+# 切换版本 为php 8.2
+pvm.sh -v 8.2
+~~~
 
 
-#### 安装教程
+## macos安装指定版本PHP
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+~~~sh
+brew install php@8.2
+~~~
 
-#### 使用说明
+## macos php默认环境变量、命令别名配置
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+在 ~/.bash_profile 文件中增加环境变量配置，内容如下
+~~~sh
+# 配置PHP环境，目的是可以在终端中直接执行php命令和让其他软件能够识别PHP的类库
+export PATH="/usr/local/opt/php/bin:$PATH"
+export PATH="/usr/local/opt/php/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/php/lib"
+export CPPFLAGS="-I/usr/local/opt/php/include"
+
+# 分别为各个版本PHP设置命令别名 设置后不受默认版本影响可以直接在终端中使用 php82 命令运行php 8.2版本
+alias php82="/usr/local/opt/php@8.2/bin/php"
+alias pecl82="/usr/local/opt/php@8.2/bin/pecl"
+
+~~~
+
 
 #### 参与贡献
 
@@ -27,11 +45,3 @@
 4.  新建 Pull Request
 
 
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

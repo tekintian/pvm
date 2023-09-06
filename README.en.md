@@ -1,4 +1,4 @@
-# macos php多版本切换工具
+# macos php version manager
 
 #### Description
 用于在macos中使用brew安装了多个PHP版本时的快速默认php版本切换！
