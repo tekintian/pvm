@@ -82,7 +82,7 @@ alias pecl82="/usr/local/opt/php@8.2/bin/pecl"
 └── php.ini-production
 ~~~
 
-注意：通过pecl安装的扩展 自动在php.ini文件中增加的扩展配置类似这样的 extension="redis.so" 移动到conf.d后最好修改为绝对路径，
+注意：通过pecl安装的扩展 自动在php.ini文件中增加的扩展配置类似这样的 extension="redis.so" 最佳方式是将配置保存为 ext-redis.ini 后移动到conf.d文件夹中，这样方便统一管理扩展和配置！
 如php8.2的redis扩展：
 ext-redis.ini
 ~~~ini
